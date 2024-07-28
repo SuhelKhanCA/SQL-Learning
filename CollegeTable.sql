@@ -33,3 +33,58 @@ SELECT *
 FROM student 
 WHERE marks>80 AND city="Pune";
 
+UPDATE student
+SET grade ="O"
+WHERE grade = "A";
+
+SET SQL_SAFE_UPDATES = 0;
+
+SELECT rollno, grade
+FROM student;
+
+UPDATE student
+SET marks=85
+WHERE rollno=106;
+
+select * from student;
+
+update student
+set marks = marks +1;
+
+
+update student
+set marks=12
+where rollno=105;
+
+delete from student
+where marks<33;
+
+select * from student;
+
+
+-- Foreign Key
+
+create table dept(
+	id int  primary key,
+    name varchar(20)
+); 
+
+create table teacher(
+	id int primary key,
+    name varchar(20),
+    dept_id int,
+    foreign key(dept_id) references dept(id)
+);
+
+insert into dept values (01, "Science"), (02, "English"), (03, "Hindi");
+
+select * from dept;
+
+insert into teacher values
+(1001, "Nadi", 01),
+(1002, "Fazu", 03),
+(1003, "Saji", 01),
+(1004, "Arf", 02);
+
+select * from teacher;
+
