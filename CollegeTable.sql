@@ -1,3 +1,8 @@
+create database college;
+
+use college;
+
+
 create table student(
 	rollno INT PRIMARY KEY,
     name VARCHAR(10), 
