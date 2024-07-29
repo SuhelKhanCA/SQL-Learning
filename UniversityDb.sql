@@ -56,3 +56,17 @@ SELECT *
 FROM student
 RIGHT JOIN course
 ON stu_id = id;
+
+-- EXCLUSIVE JOIN : LEFT
+SELECT *
+FROM student as s
+LEFT JOIN course as c
+ON s.id = c.stu_id
+WHERE c.stu_id IS NULL;
+
+-- EXCLUSIVE JOIN : right
+SELECT *
+FROM student as s
+RIGHT JOIN course as c
+ON s.id = c.stu_id
+WHERE s.id IS NULL;

@@ -105,3 +105,9 @@ add column age int;
 alter table student
 drop column age;
 
+-- SUB QUERRIES
+SELECT name, marks
+FROM student
+WHERE marks > (
+	SELECT AVG(marks)
+    FROM student);
