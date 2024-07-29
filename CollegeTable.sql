@@ -111,3 +111,11 @@ FROM student
 WHERE marks > (
 	SELECT AVG(marks)
     FROM student);
+    
+    
+-- VIEWS : Creation
+CREATE VIEW view1 AS
+SELECT rollno, name FROM student;
+
+-- Querrying View
+SELECT * FROM view1;
