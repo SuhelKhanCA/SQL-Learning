@@ -33,3 +33,26 @@ SELECT *
 FROM student
 INNER JOIN course
 ON id=stu_id;
+
+-- Left Join
+SELECT *
+FROM student
+LEFT JOIN course
+ON id = stu_id;
+
+
+-- Right Join
+SELECT *
+FROM student RIGHT JOIN course
+ON stu_id = id;
+
+-- Full Join
+SELECT *
+FROM student
+LEFT JOIN course
+ON stu_id = id
+UNION
+SELECT *
+FROM student
+RIGHT JOIN course
+ON stu_id = id;
