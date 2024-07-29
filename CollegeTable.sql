@@ -74,6 +74,8 @@ create table teacher(
     name varchar(20),
     dept_id int,
     foreign key(dept_id) references dept(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 insert into dept values (01, "Science"), (02, "English"), (03, "Hindi");
@@ -87,4 +89,19 @@ insert into teacher values
 (1004, "Arf", 02);
 
 select * from teacher;
+
+DROP table teacher;
+
+update dept
+set id = 10
+where id = 01;
+
+select * from dept;
+
+
+alter table student
+add column age int;
+
+alter table student
+drop column age;
 
