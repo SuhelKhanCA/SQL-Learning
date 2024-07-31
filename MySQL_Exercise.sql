@@ -29,3 +29,72 @@ CREATE TABLE IF NOT EXISTS countries(
     country_name VARCHAR(30) NOT NULL,
     region_id DECIMAL(10, 0) NOT NULL
 );
+
+-- 6)
+CREATE TABLE jobs(
+	job_id VARCHAR(2),
+    job_title VARCHAR(20),
+    min_salary INT,
+    max_salary INT 
+    CHECK(max_salary <= 25000)  -- Applying check as per business requirement
+);
+
+-- 7)XX
+INSERT INTO countries
+(country_id, country_name, region_id)
+VALUES
+(101, "Italy", 1),
+(102, "India", 2),
+(103, "China", 2);
+
+-- 7) //
+CREATE TABLE IF NOT EXISTS country(
+	country_id VARCHAR(2),
+    country_name VARCHAR(30)
+    CHECK(country_name IN("Italy", "India", "China")),
+    region_id DECIMAL(10, 0)
+);
+
+-- 8) XX
+CREATE TABLE job_histry(
+	employee_id VARCHAR(3),
+    start_date DATE,
+    end_date DATE,
+    job_id VARCHAR(3),
+    department_id VARCHAR(3)
+);
+
+INSERT INTO job_histry
+values("A01", "2009-5-25", "2013-3-22", "A11", "A01");
+
+CREATE TABLE job_histry2(
+	employee_id VARCHAR(3),
+    start_date DATE,
+    end_date DATE CHECK(end_date LIKE "--/--/----"),
+    job_id VARCHAR(3),
+    department_id VARCHAR(3)
+);
+
+-- 9)
+CREATE TABLE IF NOT EXISTS countries (
+    country_id INT UNIQUE, -- OR UNIQUE(country_id)
+    country_name VARCHAR(30),
+    region_id VARCHAR(10)
+);
+
+-- 10)
+CREATE TABLE jobs2(
+	job_id VARCHAR(2),
+    job_title VARCHAR(20),
+    min_salary INT default 8000,
+    max_salary INT default null
+    CHECK(max_salary <= 25000)  -- Applying check as per business requirement
+);
+
+insert into jobs2
+(job_id, job_title, min_salary)
+ values("A1", "SDE", 8900);
+ 
+ select * from jobs2;
+ 
+ 
