@@ -97,4 +97,57 @@ insert into jobs2
  
  select * from jobs2;
  
- 
+ -- 11)
+ USE hr_db;
+ CREATE TABLE IF NOT EXISTS countries(
+	country_id VARCHAR(2) PRIMARY KEY,
+    country_name VARCHAR(30),
+    region_id VARCHAR(2)
+);
+
+
+-- 12)
+
+DROP TABLE countries;
+
+CREATE TABLE IF NOT EXISTS countries(
+	country_id INT PRIMARY KEY AUTO_INCREMENT,
+    country_name VARCHAR(30),
+    region_id DECIMAL(6,0)
+);
+
+INSERT INTO countries
+(country_name, region_id)
+VALUES
+("India", 1),
+("UK", 2),
+("Romania", 3),
+("USA", 0);
+
+select * from countries;
+
+-- 13) 
+
+CREATE TABLE IF NOT EXISTS countries (
+    country_id INT,
+    country_name VARCHAR(30),
+    region_id VARCHAR(10),
+    PRIMARY KEY(country_id, region_id)
+);
+
+-- 14) applying foreign key concept
+
+
+CREATE TABLE job_histry(
+	employee_id VARCHAR(2) PRIMARY KEY,
+    start_date DATE CHECK(start_date LIKE "--/--/----" ),
+    end_date DATE CHECK(end_date LIKE "--/--/----" ),
+	job_id VARCHAR(10),
+	department_id VARCHAR(2),
+    FOREIGN KEY (job_id) REFERENCES jobs(job_id)
+);
+
+drop table dup_countries;
+drop table dup_countriess;
+
+-- 15) 
