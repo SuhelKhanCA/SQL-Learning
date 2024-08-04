@@ -151,4 +151,27 @@ drop table dup_countries;
 drop table dup_countriess;
 
 -- 15) 
+-- Needed Table
+CREATE TABLE IF NOT EXISTS departments(
+	department_id DECIMAL(4,0),
+    department_name VARCHAR(30) DEFAULT NULL,
+    manager_id DECIMAL(6,0),
+    location_id DECIMAL(4,0) NULL,
+    PRIMARY KEY(department_id, manager_id)
+);
 
+-- Asked
+CREATE TABLE IF NOT EXISTS employees(
+	employee_id INT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    email VARCHAR(50),
+    phone_number DECIMAL(10, 0),
+    hire_date DATE,
+    job_id VARCHAR(2),
+    salary DECIMAL(6,0),
+    commission DECIMAL(3,0),
+    manager_id DECIMAL(6,0),
+    department_id DECIMAL(4,0),
+	FOREIGN KEY(department_id, manager_id) REFERENCES departments(department_id, manager_id)
+);
