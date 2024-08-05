@@ -1,0 +1,34 @@
+[
+	{
+		"Field" : "job_id",
+		"Type" : "varchar(10)",
+		"Null" : "NO",
+		"Key" : "PRI",
+		"Default" : null,
+		"Extra" : ""
+	},
+	{
+		"Field" : "job_title",
+		"Type" : "varchar(35)",
+		"Null" : "YES",
+		"Key" : "",
+		"Default" : null,
+		"Extra" : ""
+	},
+	{
+		"Field" : "min_salary",
+		"Type" : "decimal(6,0)",
+		"Null" : "YES",
+		"Key" : "",
+		"Default" : null,
+		"Extra" : ""
+	},
+	{
+		"Field" : "max_salary",
+		"Type" : "decimal(6,0)",
+		"Null" : "YES",
+		"Key" : "",
+		"Default" : null,
+		"Extra" : ""
+	}
+]
