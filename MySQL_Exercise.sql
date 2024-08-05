@@ -175,3 +175,9 @@ CREATE TABLE IF NOT EXISTS employees(
     department_id DECIMAL(4,0),
 	FOREIGN KEY(department_id, manager_id) REFERENCES departments(department_id, manager_id)
 );
+
+-- 16)
+-- before solving
+drop table if exists jobs;
+drop table job_histry;
+-- Create two tables : jobs and departments
