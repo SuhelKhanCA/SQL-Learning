@@ -213,3 +213,26 @@ CREATE TABLE IF NOT EXISTS employeess(
 	FOREIGN KEY(department_id) REFERENCES departments(department_id),
     FOREIGN KEY(job_id) REFERENCES jobs(job_id)
 )Engine=InnoDB;
+
+-- DESCRIBING TABLE
+DESC jobs;
+
+-- 17)
+
+CREATE TABLE IF NOT EXISTS jobs_17 ( 
+JOB_ID integer NOT NULL UNIQUE PRIMARY KEY, 
+JOB_TITLE varchar(35) NOT NULL DEFAULT ' ', 
+MIN_SALARY decimal(6,0) DEFAULT 8000, 
+MAX_SALARY decimal(6,0) DEFAULT NULL 
+)ENGINE=InnoDB;
+
+
+-- Asked table
+CREATE TABLE IF NOT EXISTS employees_17(
+	employee_id VARCHAR(2) PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    job_id INT,
+    salary DECIMAL(6,0),
+    FOREIGN KEY(job_id) REFERENCES jobs_17(job_id)
+)Engine=InnoDB;
