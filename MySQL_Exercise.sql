@@ -1,4 +1,4 @@
-CREATE DATABASE hr_db;
+CREATE DATABASE hr_db; -- TABLE CREATION EXERCISE
 
 USE hr_db;
 
@@ -180,4 +180,36 @@ CREATE TABLE IF NOT EXISTS employees(
 -- before solving
 drop table if exists jobs;
 drop table job_histry;
--- Create two tables : jobs and departments
+drop table if exists departments;
+-- Create two tables : jobs and department
+
+CREATE TABLE department(
+	department_id DECIMAL(4,0) PRIMARY KEY,
+    department_name VARCHAR(30),
+    manager_id DECIMAL(6,0),
+    location_id DECIMAL(4,0)
+);
+
+CREATE TABLE jobs(
+	job_id VARCHAR(10) PRIMARY KEY,
+    job_title VARCHAR(35),
+    min_salary DECIMAL(6, 0) DEFAULT NULL,
+    max_salary DECIMAL(6,0) DEFAULT NULL
+);
+
+-- Asked Table
+CREATE TABLE IF NOT EXISTS employeess(
+	employee_id INT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    email VARCHAR(50),
+    phone_number DECIMAL(10, 0),
+    hire_date DATE,
+    salary DECIMAL(6,0),
+    commission DECIMAL(3,0),
+    job_id VARCHAR(10),
+    manager_id DECIMAL(6,0),
+    department_id DECIMAL(4,0),
+	FOREIGN KEY(department_id) REFERENCES departments(department_id),
+    FOREIGN KEY(job_id) REFERENCES jobs(job_id)
+)Engine=InnoDB;
