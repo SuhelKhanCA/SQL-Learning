@@ -236,3 +236,7 @@ CREATE TABLE IF NOT EXISTS employees_17(
     salary DECIMAL(6,0),
     FOREIGN KEY(job_id) REFERENCES jobs_17(job_id)
 )Engine=InnoDB;
+
+
+-- 18) 
+-- Required table
