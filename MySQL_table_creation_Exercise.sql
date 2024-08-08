@@ -301,3 +301,5 @@ CREATE TABLE IF NOT EXISTS employee_20(
     on delete no action
     on update no action
 );
+
+drop database hr_db;
