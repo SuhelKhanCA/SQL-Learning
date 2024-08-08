@@ -119,3 +119,5 @@ SELECT rollno, name FROM student;
 
 -- Querrying View
 SELECT * FROM view1;
+
+drop database college;
