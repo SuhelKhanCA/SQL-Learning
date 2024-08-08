@@ -240,3 +240,64 @@ CREATE TABLE IF NOT EXISTS employees_17(
 
 -- 18) 
 -- Required table
+CREATE TABLE IF NOT EXISTS jobs_18 ( 
+JOB_ID integer NOT NULL UNIQUE PRIMARY KEY, 
+JOB_TITLE varchar(35) NOT NULL DEFAULT ' ', 
+MIN_SALARY decimal(6,0) DEFAULT 8000, 
+MAX_SALARY decimal(6,0) DEFAULT NULL 
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS employee_18(
+	employee_id INT PRIMARY KEY auto_increment,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    job_id INT,
+    salary DECIMAL(6,0),
+    FOREIGN KEY(job_id) REFERENCES jobs_18(job_id)
+    on delete cascade
+    on update restrict
+);
+
+drop table employee_18; -- casding missed so...
+
+-- 19)
+-- supporting table
+CREATE TABLE IF NOT EXISTS jobs_19 ( 
+JOB_ID integer NOT NULL UNIQUE PRIMARY KEY, 
+JOB_TITLE varchar(35) NOT NULL DEFAULT ' ', 
+MIN_SALARY decimal(6,0) DEFAULT 8000, 
+MAX_SALARY decimal(6,0) DEFAULT NULL 
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS employee_19(
+	employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    job_id INT,
+    salary DECIMAL(6,0),
+    
+    foreign key(job_id) references jobs_19(job_id)
+    on delete set null
+    on update set null
+);
+
+-- 20)
+
+CREATE TABLE IF NOT EXISTS jobs_20 ( 
+JOB_ID integer NOT NULL UNIQUE PRIMARY KEY, 
+JOB_TITLE varchar(35) NOT NULL DEFAULT ' ', 
+MIN_SALARY decimal(6,0) DEFAULT 8000, 
+MAX_SALARY decimal(6,0) DEFAULT NULL 
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS employee_20(
+	employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    job_id INT,
+    salary DECIMAL(6,0),
+    
+    foreign key(job_id) references jobs_20(job_id)
+    on delete no action
+    on update no action
+);
