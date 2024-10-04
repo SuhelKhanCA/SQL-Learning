@@ -78,3 +78,19 @@ SELECT *
 FROM chai_store
 ORDER BY price DESC
 LIMIT 1 OFFSET 1;
+
+
+ALTER TABLE chai_store RENAME products;
+-- Alter command
+ALTER Table products ADD stock INT DEFAULT 0;
+
+SELECT * FROM products;
+ALTER TABLE products 
+MODIFY COLUMN price DECIMAL(12,2);
+desc products;
+ALTER TABLE products
+DROP COLUMN stock;
+
+TRUNCATE TABLE products; -- empty the table
+
+ALTER Table products RENAME chai_store_products;
