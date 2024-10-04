@@ -73,3 +73,8 @@ WHERE chai_name = "Black chai";
 SELECT * FROM chai_store;
 
 
+-- second highest
+SELECT *
+FROM chai_store
+ORDER BY price DESC
+LIMIT 1 OFFSET 1;
