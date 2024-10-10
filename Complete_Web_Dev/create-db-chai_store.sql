@@ -87,8 +87,8 @@ ALTER Table products ADD stock INT DEFAULT 0;
 SELECT * FROM products;
 ALTER TABLE products 
 MODIFY COLUMN price DECIMAL(12,2);
-desc products;
-ALTER TABLE products
+desc chai_store_products;
+ALTER TABLE chai_store_products
 DROP COLUMN stock;
 
 TRUNCATE TABLE products; -- empty the table
