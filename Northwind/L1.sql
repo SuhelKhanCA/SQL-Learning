@@ -76,7 +76,7 @@ FROM products
 WHERE UnitPrice BETWEEN 18 AND 40;
 
 -- IN
-SELECT *
+SELECT `ContactName`, `City`
 FROM customers
 WHERE `City` IN ('London', 'Paris');
 
@@ -84,3 +84,15 @@ WHERE `City` IN ('London', 'Paris');
 SELECT *
 FROM customers
 WHERE City LIKE 's%';
+
+-- OPERATORS in The WHERE Clause
+-- 
+-- = :	Equal	
+-- > :	Greater than	
+-- < :	Less than	
+-- >= :	Greater than or equal	
+-- <= :	Less than or equal	
+-- <> :	Not equal. Note: In some versions of SQL this operator may be written as !=	
+-- BETWEEN :	Between a certain range	
+-- LIKE	: Search for a pattern	
+-- IN :	To specify multiple possible values for a column
